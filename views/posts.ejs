@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <%- include("partials/header")%>
+        <div class="blog-posts">
+        
+            <% if (locals.blogList?.length < 1) { %>
+            <p class="createPost no-post">You don't have any posts. </p>
+            <p class="createPost no-post">Please click on the <strong><em>Create Blog </em></strong> page to write a New Blog!</p>
+     
+            <% } else {%>
+                <h2 class="your-blog-list">Your Blog List  </h2>       
+      
+             
+             <% for( let i = 0; i < locals.blogList?.length; i++ ) { %>
+       
+            <div class="blog-card">           
+                <h2 class="h2-blogTitle">
+                   <span class="blog-number"> <%= i + 1 %>.&nbsp</span><%= blogList[i].title %>
+                </h2>
+                <h3>Author:&nbsp <%= blogList[i].author %></h3>
+                <p class="p-blogDescription">
+                    <%= blogList[i].description?.slice(0,300) %>
+                    <% if (blogList[i].description?.length> 299 ) { %> ...
+                        <a class="view-btn" href="/blogDetails/<%= blogList[i].id %>">View Blog</a>
+                    <% } %>
+                </p>
+                <div class="btn-wrapper"> 
+                    
+                        <form action="/delete/<%= blogList[i].id %>" method="post">
+                            <button class="delete-btn">Delete</button>
+                        </form>
+                    <button class="edit-btn"><a  href="/edit/<%=  blogList[i].id %>">Edit</a></button>
+                </div>
+            </div>                    
+             <% } %>
+
+            <% } %>
+        </div>
+
+   <%- include("partials/footer")%>;
+    
+</body>
+</html>

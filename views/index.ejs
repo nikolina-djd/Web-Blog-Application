@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/style.css">
+    <title>Document</title>
+</head>
+<body>
+<div id="container">
+ <%- include("partials/header")%>;
+    <div class="blog-form">
+   <% if (locals.isEdit) { %>
+      <h2 class="createPost">Edit your blog</h2>   
+   <% }else{%>
+      <h2 class="createPost">Please fill in the form to create your post</h3>
+   <%} %> 
+        <div class="container-form">
+            <form action="<%= locals.isEdit? `/edit/${locals.blogDetails?.id}`: '/submit'%>"  method="post">
+                <div class="row"> 
+                <div class="col-25">
+                    <label for="title">Title</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="fname" name="title" placeholder="Blog Title.." value="<%= locals.isEdit? locals.blogDetails.title : "" %>">
+                </div>
+                </div>
+                <div class="row">
+                <div class="col-25">
+                    <label for="author">Author</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="lname" name="author" placeholder="Your name.." value ="<%= locals.isEdit? locals.blogDetails.author : "" %>" >
+                </div>
+                </div>
+                <div class="row">
+                <div class="col-25">
+                    <label for="blogpost">Your Blog</label>
+                </div>
+                <div class="col-75">
+                    <textarea id="subject" name="blogpost" placeholder="Write your post here.." style="height:200px" ><%= locals.isEdit? locals.blogDetails.description : "" %></textarea>
+                </div>
+                </div>
+                <div class="row">
+                    <input type="submit" value="<%= locals.isEdit? 'EDIT': 'PUBLISH' %>">
+                </div>
+            </form>
+        </div>
+
+    
+
+    </div>
+ 
+ <%- include("partials/footer")%>;
+</div> 
+</body>
+</html>

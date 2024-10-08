@@ -1,0 +1,16 @@
+  <%- include("partials/header")%>
+
+    <div class="container-blogDetails">
+      <div class="viewBlog-header">
+        <h1 class="title text-left"><%= locals.blogDetails?.title %></h1>
+        <h2 class="h2-blogTitle">Author: &nbsp <%= locals.blogDetails?.author %></h2>
+      </div>
+
+      <div class="overflow-div">
+        <p><%= locals.blogDetails?.description %></p>
+         <a href="/edit/<%=locals.blogDetails?.id  %>" class="edit-btn">Edit</a>
+      </div>
+    </div>
+
+
+  <%- include("partials/footer")%>;

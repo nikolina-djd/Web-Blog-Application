@@ -1,0 +1,261 @@
+
+html,  body {
+  margin:0;
+  padding:0;  
+  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100%;
+}
+
+
+* {
+  box-sizing: border-box;
+}
+ 
+ a  {
+  text-decoration: none;
+ 
+ }
+
+
+/*main content */
+#container {
+  margin-bottom: 10px;
+  background-color: rgb(232, 233, 242);
+  min-height: 100vh;
+}
+
+
+
+.blog-form, .blog-posts, .container-blogDetails {
+  width: 50%;
+  margin: auto;
+  background-color: 232, 233, 242;
+  color:rgb(10, 10, 80);
+  min-height: 100vh;
+  padding-bottom: 5rem;
+}
+
+
+
+/* blog form  */
+
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+input[type=submit] {
+  background-color:rgb(10, 10, 80);
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+input[type=submit]:hover {
+  background-color: rgb(16, 147, 229);
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f1f8f7;
+  padding: 20px;
+}
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.createPost {
+  text-align: center;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+
+/*Blog Post*/
+
+.your-blog-list {
+ text-align: center;
+
+ } 
+
+ .no-post {
+  font-size: 1.2rem;
+ }
+
+.blog-card {
+  background-color: rgb(236, 242, 244);
+  border-radius:25px ;
+  margin: 1.2rem;
+  color: rgb(10, 10, 80);
+  padding: 1.5rem;
+  height: 14rem;
+  
+}
+
+.h2-blogTitle, .p-blogDescription {
+  margin:0;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  
+ }
+  
+  .btn-wrapper {
+    display:inline-flex;
+    float: right;
+    gap: 10px;
+    } 
+  
+ .delete-btn, .edit-btn {
+    color: white;
+    padding: 0.4rem;
+    width: 4rem;
+    border-radius: 0.4rem;
+    font-weight: 700;
+    padding: 0.5rem;
+    border: 1px solid grey;
+
+ }
+
+.delete-btn {
+ background-color: red;
+}
+
+ .edit-btn {
+  background-color: rgb(16, 147, 229);
+ }
+
+
+.edit-btn a {
+   color: white;
+   text-decoration: none;
+ }
+
+/* header */
+.header {
+  background-image: linear-gradient(rgb(4, 10, 96), rgb(236, 242, 244) 90%, rgb(16, 147, 229));
+  height: 15vh;
+  margin-top:0px;
+  width:100%;
+}
+
+
+.h1-header {
+  color: rgb(10, 10, 80);
+  text-align: center;
+  margin: 0px;
+  padding: 1rem;
+  color:white;
+}
+
+.ul-header {
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  
+  
+}
+
+.nav-bar {
+  display: inline;
+  font-weight:700 ;
+  margin-right: 0.5rem;
+  font-size: 1.3rem;
+  color:rgb(10, 10, 80);
+
+}
+.nav-bar a {
+color:rgb(10, 10, 80);
+padding: 1rem;
+}
+
+
+
+/* footer */
+footer {
+  width:100%;
+  background-image: linear-gradient(rgb(16, 147, 229), rgb(236, 242, 244) 10%, rgb(4, 10, 96));
+  height:100px;
+  position: fixed;
+   bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.p-footer {
+font-size: 1.1rem;
+color:rgb(10, 10, 80);;
+text-align: center;
+padding-top: 1rem;
+}
+
+/*Responsive  */
+
+@media screen and (max-width: 768px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+
+  .h2-blogTitle, .your-blog-list, .no-post, .createPost,  .nav-bar, .h1-header,  h3,  .text-left{
+    font-size: 1rem;
+  }
+
+  .p-footer, .overflow-div p {
+   font-size: 0.9rem;
+  }
+
+  .nav-bar {
+  padding-bottom: 1rem;
+  }
+  .p-blogDescription {
+  font-size: 0.7rem;
+  }
+
+
+
+ .blog-post, .blog-card {
+ width: 100%;
+
+ background-color: white;
+ }
+
+  .delete-btn, .edit-btn {
+    color: white;
+    padding: 0.3rem;
+    width: 3rem;
+    margin-bottom: 1rem;
+
+  }
+
+} 
+
+
